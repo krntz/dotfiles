@@ -9,7 +9,7 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-export PS1="\u@\h: \w\n\\$ \[$(tput sgr0)\]"
+export PS1="\[$(tput bold)\]\u@\h: \w\[$(tput sgr0)\]\n\\$ \[$(tput sgr0)\]"
 
 # added by Anaconda3 installer
 export PATH="/home/akrantz/anaconda3/bin:$PATH"
