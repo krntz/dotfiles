@@ -1,4 +1,4 @@
-syntax enable		" enable syntax processing
+syntax on		" enable syntax processing
 
 colorscheme flattened_dark
 
