@@ -8,8 +8,8 @@
 dotdir=$(pwd)
 
 # delete existing files
-rm -rf ~/.vimrc
-rm -rf ~/.bashrc
+rm ~/.vimrc
+rm ~/.bashrc
 
 # symlink dotfiles
 ln -s $dotdir/vimrc ~/.vimrc
