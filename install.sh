@@ -10,13 +10,9 @@ dotdir=$(pwd)
 # delete existing files
 rm ~/.vimrc
 rm ~/.bashrc
+rm -rf ~/.vim
 
 # symlink dotfiles
 ln -s $dotdir/vimrc ~/.vimrc
 ln -s $dotdir/bashrc ~/.bashrc
-
-# make sure vim has the correct colorscheme
-mkdir -p ~/.vim/color
-
-wget -q https://github.com/romainl/flattened/raw/master/colors/flattened_dark.vim
-mv flattened_dark.vim ~/.vim/color
+ln -s $dotdir/vim ~/.vim
