@@ -1,0 +1,6 @@
+Host kraken
+    HostName kraken.tek.bth.se
+    User amkb14
+
+Host *
+    User akrantz
