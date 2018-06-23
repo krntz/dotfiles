@@ -1,3 +1,5 @@
 [user]
 	email = krantz.amandus@gmail.com
 	name = Amandus Krantz
+[credential]
+    helper = cache
