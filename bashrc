@@ -11,5 +11,4 @@ fi
 # User specific aliases and functions
 export PS1="\[$(tput bold)\]\u@\h: \w\[$(tput sgr0)\]\n\\$ \[$(tput sgr0)\]"
 
-# added by Anaconda3 installer
-export PATH="/home/akrantz/anaconda3/bin:$PATH"
+alias 'v'=vim
