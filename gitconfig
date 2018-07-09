@@ -2,6 +2,9 @@
     name = Amandus Krantz
     email = krantz.amandus@gmail.com
     username = krntz
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
 [credential]
     helper = cache
 [github]
