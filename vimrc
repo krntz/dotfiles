@@ -2,14 +2,15 @@ syntax on		" enable syntax processing
 
 colorscheme flattened_dark
 
-set tabstop=4		" number of visual spaces per TAB
-set softtabstop=4	" number of spaces in tab when editing
+" fix tabs
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 
 set relativenumber number
 set showcmd
 
-filetype indent on
+filetype plugin indent on
 
 set wildmenu
 
@@ -20,7 +21,7 @@ set showmatch
 set incsearch
 set hlsearch
 
-nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <space><space> :nohlsearch<CR>
 
 nnoremap j gj
 nnoremap k gk
