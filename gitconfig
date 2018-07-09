@@ -1,5 +1,8 @@
 [user]
-	email = krantz.amandus@gmail.com
-	name = Amandus Krantz
+    name = Amandus Krantz
+    email = krantz.amandus@gmail.com
+    username = krntz
 [credential]
     helper = cache
+[github]
+    user = krntz
