@@ -1,7 +1,9 @@
 " enable syntax highlighting
 syntax on
 
-colorscheme flattened_dark
+" make comments italicized and use monochrome colorscheme
+let g:monochrome_italic_comments = 1
+colorscheme monochrome
 
 " fix tabs
 set softtabstop=4
@@ -9,6 +11,7 @@ set shiftwidth=4
 set expandtab
 
 set relativenumber number " current line number as well as relative line numbers
+set numberwidth=3
 set showcmd " show partially entered commands
 
 filetype plugin indent on " auto-detect filetypes for indents etc.
