@@ -13,6 +13,7 @@ rm ~/.vimrc
 rm ~/.bashrc
 rm ~/.gitconfig
 rm ~/.gitignore
+rm ~/.tmux.conf
 rm ~/.ssh/config
 rm -rf ~/.vim
 rm -rf ~/.termux
@@ -22,6 +23,7 @@ ln -s $dotdir/vimrc ~/.vimrc
 ln -s $dotdir/bashrc ~/.bashrc
 ln -s $dotdir/gitconfig ~/.gitconfig
 ln -s $dotdir/gitignore ~/.gitignore
+ln -s $dotdir/tmux.conf ~/.tmux.conf
 ln -s $dotdir/ssh/config ~/.ssh/config
 ln -s $dotdir/vim ~/.vim
 ln -s $dotdir/termux ~/.termux
