@@ -1,11 +1,10 @@
 " enable syntax highlighting
 syntax on
-set termguicolors
 
-" make comments italicized and use gruvbox colorscheme
-let g:gruvbox_italics=1
-colorscheme gruvbox
+" use gruvbox colorscheme
 set background=dark
+colorscheme gruvbox
+
 " fix tabs
 set softtabstop=4
 set shiftwidth=4
