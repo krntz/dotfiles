@@ -12,3 +12,4 @@ fi
 export PS1="\[$(tput bold)\]\u@\h: \w\[$(tput sgr0)\]\n\\$ \[$(tput sgr0)\]"
 
 alias 'v'=vim
+export TERM=xterm-256color

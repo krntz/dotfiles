@@ -4,6 +4,7 @@ syntax on
 " use gruvbox colorscheme
 set background=dark
 colorscheme gruvbox
+set termguicolors
 
 " fix tabs
 set softtabstop=4
