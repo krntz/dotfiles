@@ -36,3 +36,6 @@ inoremap jk <esc> " easy escape from input mode
 " show the 80th column
 set textwidth=80
 set colorcolumn=+1
+
+" scroll when there are 8 lines left to margin
+set scrolloff=8
