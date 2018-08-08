@@ -22,8 +22,6 @@ set wildmenu " make command completion good
 set lazyredraw " update the screen only when needed
 
 set showmatch " highlight matching brackets/parenthesis/whatever
-
-
 set incsearch " show search matches while typing
 set hlsearch " highlight search matches
 
@@ -34,3 +32,7 @@ nnoremap j gj
 nnoremap k gk
 
 inoremap jk <esc> " easy escape from input mode
+
+" show the 80th column
+set textwidth=80
+set colorcolumn=+1
