@@ -8,4 +8,4 @@
 [credential]
     helper = cache
 [github]
-    user = krntz
+    username = krntz
