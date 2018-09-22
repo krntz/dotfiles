@@ -3,7 +3,7 @@ syntax on
 
 " use gruvbox colorscheme
 set background=dark
-colorscheme gruvbox
+colorscheme OceanicNext
 set termguicolors
 
 " fix tabs
@@ -39,3 +39,5 @@ set colorcolumn=+1
 
 " scroll when there are 8 lines left to margin
 set scrolloff=8
+
+set runtimepath^=~/.vim/bundle/goyo.vim
