@@ -1,0 +1,17 @@
+rename articles
+
+open_with dnf
+rename 
+c
+h
+rename exam.pdf
+rename re-exam.pdf
+rename re-re-exam.pdf
+help
+rename transcript-of-records.pdf
+open_with zathura
+rename papamitsiou2014.pdf
+delete sc
+open_with 
+delete
+rename skola.ics

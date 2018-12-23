@@ -1,10 +1,10 @@
 " enable syntax highlighting
 syntax on
 
-" use gruvbox colorscheme
-set background=dark
-colorscheme OceanicNext
-set termguicolors
+"colorscheme
+let base16colorspace=256
+"set t_Co=256
+colorscheme base16-tomorrow-night
 
 " fix tabs
 set softtabstop=4
@@ -33,11 +33,18 @@ nnoremap k gk
 
 inoremap jk <esc> " easy escape from input mode
 
-" show the 80th column
-set textwidth=80
-set colorcolumn=+1
-
 " scroll when there are 8 lines left to margin
 set scrolloff=8
 
 set runtimepath^=~/.vim/bundle/goyo.vim
+
+let g:livepreview_cursorhold_recompile = 0
+
+" spellcheck settings
+map <F5> :setlocal spell<CR>
+set spelllang=en
+set spellfile=$HOME/.vim/spell/en.utf-8.add
+
+" copy selected text to system clipboard
+vnoremap <C-c> "*Y :let @+=@*<CR>
+nnoremap <C-p> "+P
