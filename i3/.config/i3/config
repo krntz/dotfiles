@@ -36,7 +36,11 @@ set $mod Mod4
 floating_modifier $mod
 
 # start URvxt
+for_window [instance="float-urxvt"] floating enable
+for_window [instance="float-urxvt"] resize set 1080 720
+for_window [instance="float-urxvt"] move position center
 bindsym $mod+Return exec urxvt
+bindsym $mod+Shift+Return exec urxvt -name float-urxvt
 
 # start keepassxc (in floating mode)
 for_window [class="keepassxc"] floating enable
@@ -200,9 +204,9 @@ bar {
         statusline $color12
 
         # State             Border  BG      Text
-        focused_workspace   $color7 $color7 $color0
+        focused_workspace   $color0 $color0 $color7
         active_workspace    $color7 $color8 $color0
-        inactive_workspace  $color0 $color0 $color7
+        inactive_workspace  $color0 $color0 $color1
         urgent_workspace    $color1 $color1 $color0
         binding_mode        $color0 $color3 $color0
     }
