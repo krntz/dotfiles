@@ -17,7 +17,6 @@ general {
 
 order += "volume master"
 order += "battery all"
-order += "wireless _first_"
 order += "tztime local"
 
 battery all {
@@ -40,8 +39,4 @@ volume master {
     format = "Volume: %volume"
     format_muted = "Volume: muted"
     device = "pulse:1"
-}
-
-wireless _first_ {
-    format_up = "Wifi: %essid"
 }
