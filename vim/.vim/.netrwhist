@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/akrantz/.dotfiles/.git'
-let g:netrw_dirhist_2='/home/akrantz'
-let g:netrw_dirhist_3='/home/akrantz/.dotfiles/vim'
-let g:netrw_dirhist_4='/home/akrantz/Documents/bth/multiproc-dv2544/projects/proj3/report'
-let g:netrw_dirhist_5='/home/akrantz/Documents/bth/multiproc-dv2544/projects/proj3'
-let g:netrw_dirhist_6='/home/akrantz/Documents/bth/multiproc-dv2544/projects/proj3/report'

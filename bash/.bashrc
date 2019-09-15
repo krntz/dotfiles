@@ -15,12 +15,23 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-export PS1="[\W] "
+export PS1=" \w > "
 
-alias 'v'=vim
+alias 'v'=nvim
 alias 'z'=zathura
-export TERM=xterm-256color
 
-export PATH="$PATH:/opt/zotero:$HOME/.local/bin/"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/akrantz/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/akrantz/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/akrantz/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/akrantz/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
-source ~/.restic-env

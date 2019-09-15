@@ -1,11 +1,6 @@
 " enable syntax highlighting
 syntax on
 
-"colorscheme
-let base16colorspace=256
-"set t_Co=256
-colorscheme base16-tomorrow-night
-
 " fix tabs
 set softtabstop=4
 set shiftwidth=4
@@ -36,9 +31,7 @@ inoremap jk <esc> " easy escape from input mode
 " scroll when there are 8 lines left to margin
 set scrolloff=8
 
-set runtimepath^=~/.vim/bundle/goyo.vim
 
-let g:livepreview_cursorhold_recompile = 0
 
 " spellcheck settings
 map <F5> :setlocal spell<CR>
