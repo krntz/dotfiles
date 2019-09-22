@@ -5,11 +5,11 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-    eval "$("$BASE16_SHELL/profile_helper.sh")"
+alias 'v'=vim
+alias 'z'=zathura
+alias 'i3config'='vim /home/akrantz/.config/i3/config'
+alias 'polybarconfig'='vim /home/akrantz/.config/polybar/config'
+alias 'vimconfig'='vim /home/akrantz/.vimrc'
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
@@ -17,8 +17,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 # User specific aliases and functions
 export PS1=" \w > "
 
-alias 'v'=nvim
-alias 'z'=zathura
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

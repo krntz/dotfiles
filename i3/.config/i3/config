@@ -1,3 +1,10 @@
+## APP CONSTANTS
+set $browser    firefox
+set $music      spotify
+set $terminal   urxvt
+
+set $scripts    /home/akrantz/.scripts
+
 ## COLORS
 # load colors from ~/.Xresources
 set_from_resource $color0   color0  #000000
@@ -26,6 +33,9 @@ client.placeholder      $color0     $color0     $color7 $color0     $color0
 client.background       $color15
 
 ## AUTOSTART SCRIPTS
+# set correct keymap
+exec --no-startup-id "setxkbmap se"
+
 # make pointer disappear when not used
 exec --no-startup-id unclutter
 
@@ -42,10 +52,7 @@ exec xset b off
 bindsym Control+Alt+q exec "xautolock -locknow"
 
 # lock computer after 15 minutes
-exec xautolock -time 15 -locker "i3lock -c 333333"
-
-# polybar
-exec_always --no-startup-id /home/akrantz/.config/polybar/launch.sh
+exec --no-startup-id xautolock -time 15 -locker "i3lock -c 333333"
 
 ## WORKSPACES
 set $ws1 "1"
@@ -66,23 +73,17 @@ set $mod Mod4
 floating_modifier $mod
 
 # start URvxt
-for_window [instance="float-urxvt"] floating enable
-for_window [instance="float-urxvt"] resize set 1080 720
-for_window [instance="float-urxvt"] move position center
-bindsym $mod+Return exec urxvt
-bindsym $mod+Shift+Return exec urxvt -name float-urxvt
+bindsym $mod+Return exec $terminal
 
 # start browser
-bindsym $mod+w exec firefox
+bindsym $mod+w exec $browser
+bindsym $mod+Control+w exec $scripts/rofi/rofi-web "$browser --new-window"
+bindsym $mod+Shift+w exec $scripts/rofi/rofi-search "$browser --new-window"
 
-# start ranger
-for_window [instance="float-ranger"] floating enable
-for_window [instance="float-ranger"] resize set 1080 720
-for_window [instance="float-ranger"] move position center
-bindsym $mod+Shift+r exec urxvt -name float-ranger -e ranger
-bindsym $mod+r exec urxvt -e ranger
-
-bindsym Print exec /home/akrantz/scripts/dmenu-screenshot.sh
+# start music
+bindsym $mod+s exec $music
+for_window [class="Spotify"] move container to workspace $ws10
+for_window [class="Spotify"] fullscreen enable
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -101,12 +102,6 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# resize container
-bindsym $mod+Shift+y exec /home/akrantz/scripts/i3resize.sh left
-bindsym $mod+Shift+u exec /home/akrantz/scripts/i3resize.sh down
-bindsym $mod+Shift+i exec /home/akrantz/scripts/i3resize.sh up
-bindsym $mod+Shift+o exec /home/akrantz/scripts/i3resize.sh right
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -153,35 +148,30 @@ bindsym $mod+Shift+space    floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space          focus mode_toggle
 
-# backup media keys (for use with laptop keyboard)
-bindsym $mod+Shift+p        exec playerctl play-pause
+# media keys
+bindsym $mod+F10            exec pactl set-sink-volume 1 +5%
+bindsym $mod+F11            exec pactl set-sink-volume 1 -5%
+bindsym $mod+F12            exec pactl set-sink-mute 1 toggle
+
+bindsym $mod+F6             exec playerctl previous
+bindsym $mod+F7             exec playerctl play-pause
+bindsym $mod+F8             exec playerctl next
+
+# rofi
+bindsym $mod+n  exec $scripts/rofi/rofi-now
+bindsym $mod+Shift+n exec $scripts/rofi/rofi-vol
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+F2             restart
+
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+Escape        exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes' 'i3-msg exit'"
+bindsym $mod+Escape         exec $scripts/rofi/rofi-exit
 
-
-## BAR
-#bar {
-#    status_command i3status
-#    mode dock
-#    position bottom
-#    tray_padding 0
-#
-#    colors {
-#        background $color0
-#        separator  $color8
-#        statusline $color12
-#
-#        # State             Border  BG      Text
-#        focused_workspace   $color0 $color0 $color7
-#        active_workspace    $color7 $color8 $color0
-#        inactive_workspace  $color0 $color0 $color1
-#        urgent_workspace    $color1 $color1 $color0
-#        binding_mode        $color0 $color3 $color0
-#    }
-#}
+# resize containers
+bindsym $mod+Shift+y exec $scripts/i3/i3resize left
+bindsym $mod+Shift+u exec $scripts/i3/i3resize down
+bindsym $mod+Shift+i exec $scripts/i3/i3resize up
+bindsym $mod+Shift+o exec $scripts/i3/i3resize right
 
 ## MISC
 # set smaller borders
@@ -192,7 +182,8 @@ hide_edge_borders smart
 
 # gaps
 smart_gaps on
-gaps inner 15
+gaps inner 32
+gaps outer 16
 
 # force floating for some windows
 for_window [window_role="Preferences"]  floating enable

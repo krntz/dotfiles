@@ -1,6 +1,8 @@
 " enable syntax highlighting
 syntax on
 
+colorscheme base16-solarized-dark
+
 " fix tabs
 set softtabstop=4
 set shiftwidth=4
