@@ -1,7 +1,7 @@
 " enable syntax highlighting
 syntax on
 
-colorscheme base16-solarized-dark
+colorscheme gruvbox
 
 " fix tabs
 set softtabstop=4
