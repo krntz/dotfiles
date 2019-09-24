@@ -5,16 +5,21 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
+
 alias 'v'=vim
 alias 'z'=zathura
-alias 'i3config'='vim /home/akrantz/.config/i3/config'
-alias 'polybarconfig'='vim /home/akrantz/.config/polybar/config'
-alias 'vimconfig'='vim /home/akrantz/.vimrc'
-
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
+alias 'i3config'='vim $HOME/.config/i3/config'
+alias 'polybarconfig'='vim $HOME/.config/polybar/config'
+alias 'vimconfig'='vim $HOME/.vimrc'
 
 export PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\h:\[$(tput sgr0)\]\[\033[38;5;6m\][\w]:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+bind '"\eOA": history-search-backward'
+bind '"\eOB": history-search-forward'
 
 
 # >>> conda initialize >>>
