@@ -46,6 +46,9 @@ exec --no-startup-id dunst
 # set wallpaper
 exec --no-startup-id "/home/akrantz/.fehbg"
 
+# compton
+exec --no-startup-id compton --config /home/akrantz/.config/compton/compton.conf
+
 # turn off beep
 exec xset b off
 
@@ -177,9 +180,6 @@ bindsym $mod+Shift+o exec $scripts/i3/i3resize right
 ## MISC
 # set smaller borders
 for_window [class="^.*"] border pixel 1
-
-# get rid of the borders completely if there is only one window on the workspace
-hide_edge_borders smart
 
 # gaps
 #smart_gaps off
