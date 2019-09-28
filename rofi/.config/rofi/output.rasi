@@ -1,0 +1,22 @@
+configuration {
+window-format: "{n}";
+}
+
+* {
+background-color:      #1d1f21;
+border-color:          #ffffff44;
+text-color:            #c5c8c6;
+font:                  "Product Sans Bold 12";
+}
+
+#window {
+anchor:     north;
+location:   north;
+width:      100%;
+padding:    10px 0px 10px 0px;
+children: [textbox];
+}
+
+#textbox {
+horizontal-align: 0.5;
+}
