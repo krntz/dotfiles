@@ -179,7 +179,7 @@ bindsym $mod+Shift+o exec $scripts/i3/i3resize right
 
 ## MISC
 # set smaller borders
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 
 # gaps
 #smart_gaps off
