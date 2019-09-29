@@ -1,0 +1,12 @@
+#!/usr/bin/sh
+BAT="/sys/class/power_supply/BAT1"
+PCT=$(cat $BAT/capacity)
+
+if [ $(cat $BAT/status) == "Discharging" ]
+then
+   CHG="Discharging"
+else
+   CHG="Charging"
+fi
+
+rofi -theme output -e "$CHG $PCT%"
