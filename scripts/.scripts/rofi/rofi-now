@@ -1,2 +1,0 @@
-#!/usr/bin/sh
-rofi -theme output -e "$(date +'%a %d %b %H:%M')"

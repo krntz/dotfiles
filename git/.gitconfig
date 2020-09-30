@@ -1,9 +1,9 @@
 [user]
     name = Amandus Krantz
-    email = krantz.amandus@gmail.com
+    email = krantz.amandus@protonmail.com
     username = krntz
 [core]
-    editor = vim
+    editor = neovim
     excludesfile = ~/.gitignore
 [credential]
     helper = cache
