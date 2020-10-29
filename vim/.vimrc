@@ -12,7 +12,7 @@ set relativenumber number " current line number as well as relative line numbers
 set numberwidth=3
 set showcmd " show partially entered commands
 
-filetype plugin indent on " auto-detect filetypes for indents etc.
+filetype plugin indent on " auto-detect file types for indents etc.
 
 set wildmenu " make command completion good
 
@@ -24,7 +24,7 @@ set hlsearch " highlight search matches
 
 nnoremap <space><space> :nohlsearch<CR> " turn off search highlight
 
-" make moving through soft linebreaks not horrible
+" make moving through soft line breaks not horrible
 nnoremap j gj
 nnoremap k gk
 
@@ -35,7 +35,7 @@ set scrolloff=8
 
 
 
-" spellcheck settings
+" spell check settings
 map <F5> :setlocal spell<CR>
 set spelllang=en
 set spellfile=$HOME/.vim/spell/en.utf-8.add
@@ -43,3 +43,6 @@ set spellfile=$HOME/.vim/spell/en.utf-8.add
 " copy selected text to system clipboard
 vnoremap <C-c> "*Y :let @+=@*<CR>
 nnoremap <C-p> "+P
+
+" vimtex
+let g:tex_flavor = 'latex'
