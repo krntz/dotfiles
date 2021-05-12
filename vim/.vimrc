@@ -1,14 +1,21 @@
 " enable syntax highlighting
 syntax on
 
-colorscheme gruvbox
+" visuals
+set background=dark
+let base16colorspace=256
+set termguicolors
+colorscheme gruvbox8
+"set novisualbell
+set number 
+set relativenumber
+set showmatch " highlight matching brackets/parenthesis/whatever
 
 " fix tabs
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-set relativenumber number " current line number as well as relative line numbers
 set numberwidth=3
 set showcmd " show partially entered commands
 
@@ -18,9 +25,11 @@ set wildmenu " make command completion good
 
 set lazyredraw " update the screen only when needed
 
-set showmatch " highlight matching brackets/parenthesis/whatever
+" search
 set incsearch " show search matches while typing
 set hlsearch " highlight search matches
+set ignorecase " ignore case in search
+set smartcase " override ignore when capital exists
 
 nnoremap <space><space> :nohlsearch<CR> " turn off search highlight
 
@@ -44,5 +53,8 @@ set spellfile=$HOME/.vim/spell/en.utf-8.add
 vnoremap <C-c> "*Y :let @+=@*<CR>
 nnoremap <C-p> "+P
 
-" vimtex
-let g:tex_flavor = 'latex'
+" Goyo and Limelight
+map <F6> :Goyo<CR>
+autocmd! User GoyoEnter Limelight
+"autocmd! User GoyoEnter :setlocal spell
+autocmd! User GoyoLeave Limelight!
