@@ -4,7 +4,6 @@
     username = krntz
 [core]
     editor = neovim
-    excludesfile = ~/.gitignore
 [credential]
     helper = cache
 [github]
