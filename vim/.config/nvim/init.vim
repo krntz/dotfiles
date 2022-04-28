@@ -1,7 +1,7 @@
 call plug#begin('~/.local/share/nvim/site/autoload/plugged')
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'lifepillar/vim-gruvbox8'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 set runtimepath^=~/.vim runtimepath+=~/.vim/after

@@ -5,7 +5,7 @@ syntax on
 set background=dark
 let base16colorspace=256
 set termguicolors
-colorscheme gruvbox8
+colorscheme nord
 "set novisualbell
 set number 
 set relativenumber
