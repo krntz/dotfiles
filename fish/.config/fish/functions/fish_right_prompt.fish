@@ -1,5 +1,5 @@
 function fish_right_prompt
-    if not type -q $pyenv
+    if type -q pyenv
         set pyenv_version (pyenv version-name | string split ':')
         echo "$pyenv_version "
     end
