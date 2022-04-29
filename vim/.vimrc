@@ -19,6 +19,7 @@ set expandtab
 set numberwidth=3
 set showcmd " show partially entered commands
 
+set autoindent
 filetype plugin indent on " auto-detect file types for indents etc.
 
 set wildmenu " make command completion good
