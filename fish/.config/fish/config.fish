@@ -5,6 +5,8 @@ if status is-interactive
         set -Ux PYENV_ROOT $HOME/.pyenv
         set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
     end
+
+    set -gx LANG en_US.UTF-8
 end
 
 if type -q pyenv
