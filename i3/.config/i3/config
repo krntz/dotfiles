@@ -2,9 +2,9 @@
 set $browser    firefox
 set $music      spotify
 set $terminal   urxvt
-set $lock       slock -m 'Locked at $(date "+%a %d, %H:%M:%s")'
+#set $lock       slock -m 'Locked at $(date "+%a %d, %H:%M:%s")'
 
-set $scripts    /home/akrantz/.scripts
+set $scripts    /home/ak/.scripts
 
 ## COLORS
 # load colors from ~/.Xresources
@@ -44,19 +44,20 @@ exec --no-startup-id unclutter
 exec --no-startup-id dunst
 
 # set wallpaper
-exec --no-startup-id "/home/akrantz/.fehbg"
+exec --no-startup-id "/home/ak/.fehbg"
+#exec --no-startup-id xsetroot -solid "#333333"
 
-# compton
-exec --no-startup-id compton --config /home/akrantz/.config/compton/compton.conf
+# picom
+exec --no-startup-id picom -b
 
 # turn off beep
 exec xset b off
 
 # lock computer
-bindsym Control+Alt+q exec xautolock -locknow
+#bindsym Control+Alt+q exec xautolock -locknow
 
 # lock computer after 15 minutes
-exec --no-startup-id xautolock -time 15 -locker $lock -corners 000-
+#exec --no-startup-id xautolock -time 15 -locker $lock -corners 000-
 
 ## WORKSPACES
 set $ws1 "1"
@@ -153,13 +154,13 @@ bindsym $mod+Shift+space    floating toggle
 bindsym $mod+space          focus mode_toggle
 
 # media keys
-bindsym $mod+F10            exec pactl set-sink-mute 1 toggle
-bindsym $mod+F11            exec pactl set-sink-volume 1 -5%
-bindsym $mod+F12            exec pactl set-sink-volume 1 +5%
+bindsym XF86AudioMute            exec /home/ak/.scripts/volume.sh mute
+bindsym XF86AudioLowerVolume     exec /home/ak/.scripts/volume.sh down
+bindsym XF86AudioRaiseVolume     exec /home/ak/.scripts/volume.sh up
 
-bindsym $mod+F6             exec playerctl previous
-bindsym $mod+F7             exec playerctl play-pause
-bindsym $mod+F8             exec playerctl next
+bindsym XF86AudioPrev            exec playerctl previous
+bindsym XF86AudioPlay            exec playerctl play-pause
+bindsym XF86AudioNext            exec playerctl next
 
 # rofi
 bindsym $mod+n  exec $scripts/rofi/rofi-now
@@ -179,7 +180,7 @@ bindsym $mod+Shift+o exec $scripts/i3/i3resize right
 
 ## MISC
 # set smaller borders
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 
 # gaps
 #smart_gaps off
