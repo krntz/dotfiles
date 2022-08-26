@@ -3,9 +3,8 @@ syntax on
 
 " visuals
 set background=dark
-let base16colorspace=256
 set termguicolors
-colorscheme nord
+colorscheme gruvbox
 "set novisualbell
 set number 
 set relativenumber

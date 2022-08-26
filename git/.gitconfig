@@ -8,3 +8,5 @@
     helper = cache
 [github]
     username = krntz
+[init]
+	defaultBranch = main
