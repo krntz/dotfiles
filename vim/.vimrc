@@ -43,8 +43,6 @@ inoremap jk <esc> " easy escape from input mode
 " scroll when there are 8 lines left to margin
 set scrolloff=8
 
-
-
 " spell check settings
 map <F5> :setlocal spell<CR>
 set spelllang=en
@@ -59,3 +57,13 @@ map <F6> :Goyo<CR>
 autocmd! User GoyoEnter Limelight
 "autocmd! User GoyoEnter :setlocal spell
 autocmd! User GoyoLeave Limelight!
+
+" make split direction more natural
+set splitbelow
+set splitright
+
+" make split navigation a bit easier
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
