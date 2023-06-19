@@ -4,7 +4,6 @@ syntax on
 " visuals
 set background=dark
 set termguicolors
-colorscheme gruvbox
 "set novisualbell
 set number 
 set relativenumber
@@ -41,6 +40,13 @@ inoremap jk <esc> " easy escape from input mode
 
 " scroll when there are 8 lines left to margin
 set scrolloff=8
+
+" for writing LaTeX on MacOS
+command! -nargs=? Silent
+            \ execute 'silent ! <args>'
+            \ | redraw!
+
+map <F4> :Silent xelatex % && open -a Preview && open -a iTerm
 
 " spell check settings
 map <F5> :setlocal spell<CR>
