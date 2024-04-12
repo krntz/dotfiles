@@ -1,0 +1,28 @@
+{
+  "theme": {
+    "name": "Dev theme",
+    "url": "assets:///Users/akrantz/.logseq/plugins/logseq-dev-theme/custom.css",
+    "pid": "logseq-dev-theme"
+  },
+  "themes": {
+    "mode": "dark",
+    "light": {
+      "name": "Luma Light",
+      "url": "assets:///Users/akrantz/.logseq/plugins/logseq-luma/custom.css",
+      "description": "A minimal and detail oriented light theme for Logseq",
+      "mode": "light",
+      "pid": "logseq-luma"
+    },
+    "dark": {
+      "name": "Dev theme - WITHOUT bullet threading",
+      "url": "assets:///Users/akrantz/.logseq/plugins/logseq-dev-theme/no_bullet_threading.css",
+      "description": "Dev theme without bullet threading",
+      "pid": "logseq-dev-theme",
+      "group-first": false,
+      "group-desc": null,
+      "mode": "dark",
+      "selected": false
+    }
+  },
+  "externals": []
+}
