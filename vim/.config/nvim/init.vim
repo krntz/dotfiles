@@ -3,6 +3,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'ellisonleao/gruvbox.nvim'
 Plug 'dense-analysis/ale'
+Plug 'fladson/vim-kitty'
 call plug#end()
 
 set background=dark
