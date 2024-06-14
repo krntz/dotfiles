@@ -2,3 +2,4 @@
 .DS_STORE
 vim/.vim/spell/
 logseq/.logseq/plugins/
+fish/.config/fish/conf.d/
