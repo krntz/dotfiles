@@ -3,3 +3,4 @@
 vim/.vim/spell/
 logseq/.logseq/plugins/
 logseq/.logseq/graphs/*.transit
+fish/.config/fish/conf.d/
