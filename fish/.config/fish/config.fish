@@ -4,6 +4,15 @@ end
 
 set -g fish_greeting ""
 
+set -gx EDITOR nvim
+set -gx PAGER less
+
+switch (uname -s)
+    case Darwin
+        set -gx BROWSER open
+        abbr -a --position command bu "brew update && brew upgrade"
+end
+
 abbr -a --position command v "nvim"
 abbr -a --position command py "python"
 abbr -a --position command gc "git commit"
