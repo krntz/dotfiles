@@ -7,6 +7,8 @@ set -g fish_greeting ""
 set -gx EDITOR nvim
 set -gx PAGER less
 
+set -gx PROJECT_HOMES ~/Projects
+
 switch (uname -s)
     case Darwin
         set -gx BROWSER open
