@@ -25,3 +25,5 @@ abbr -a --position command gp "git push"
 abbr -a --position command gpl "git pull"
 abbr -a --position command gcl "git clone"
 abbr -a --position command gs "git status"
+
+zoxide init fish | source
