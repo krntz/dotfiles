@@ -7,7 +7,7 @@ set -g fish_greeting ""
 set -gx EDITOR nvim
 set -gx PAGER less
 
-set -gx PROJECT_HOMES ~/Projects
+set -gx PROJECT_HOME ~/Projects
 
 switch (uname -s)
     case Darwin
