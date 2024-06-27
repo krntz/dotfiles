@@ -20,8 +20,6 @@ switch (uname -s)
         set -gx SHELL "/usr/bin/fish"
 end
 
-set --universal zoxide_cmd cd
-
 abbr -a --position command v "nvim"
 abbr -a --position command py "python"
 abbr -a --position command gc "git commit"
@@ -32,3 +30,5 @@ abbr -a --position command gp "git push"
 abbr -a --position command gpl "git pull"
 abbr -a --position command gcl "git clone"
 abbr -a --position command gs "git status"
+
+zoxide init --cmd cd fish | source
