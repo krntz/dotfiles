@@ -4,6 +4,9 @@ import = [
 
 live_config_reload = true
 
+[shell]
+program = "/usr/bin/fish"
+
 [cursor]
 style = {blinking = "On", shape = "Block"}
 
