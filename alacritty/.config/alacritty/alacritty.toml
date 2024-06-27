@@ -25,6 +25,5 @@ dynamic_title = true
 title = "Terminal"
 padding.x = 10
 padding.y = 10
-decorations = "Buttonless"
 opacity = 0.9
 blur = true
