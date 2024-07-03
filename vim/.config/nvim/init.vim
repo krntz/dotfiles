@@ -3,17 +3,14 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'ellisonleao/gruvbox.nvim'
 Plug 'dense-analysis/ale'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 set background=dark
 set termguicolors
 colorscheme gruvbox
 
-" Set this variable to 1 to fix files when you save them.
-let g:ale_fix_on_save = 1
 
-" enable syntax highlighting
-syntax on
 
 "set novisualbell
 set number 
@@ -28,8 +25,18 @@ set expandtab
 set numberwidth=3
 set showcmd " show partially entered commands
 
+""" CODING
+
+" enable syntax highlighting
+syntax on
 set autoindent
 filetype plugin indent on " auto-detect file types for indents etc.
+
+" Python
+let g:ale_fix_on_save = 1
+
+" Rust
+let g:rustfmt_autosave = 1
 
 set wildmenu " make command completion good
 
