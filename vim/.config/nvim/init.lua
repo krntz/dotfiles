@@ -38,6 +38,32 @@ require("lazy").setup({
 			opts = ...,
 		},
 		{
+			"nvim-tree/nvim-tree.lua",
+			version = "*",
+			lazy = false,
+			dependencies = {
+				"nvim-tree/nvim-web-devicons",
+			},
+			config = function()
+				vim.g.loaded_netrw = 1
+				vim.g.loaded_netrwPlugin = 1
+
+				require("nvim-tree").setup()
+			end,
+		},
+		{
+			"romgrk/barbar.nvim",
+			dependencies = {
+				"nvim-tree/nvim-web-devicons",
+			},
+			init = function()
+				vim.g.barbar_auto_setup = false
+			end,
+			opts = {
+				auto_hide = 1,
+			},
+		},
+		{
 			"L3MON4D3/LuaSnip",
 			event = "VeryLazy",
 			config = function()
