@@ -1,3 +1,6 @@
+require("options")
+require("keymaps")
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -228,69 +231,4 @@ require("lazy").setup({
 	checker = { enabled = true },
 })
 
--- Basic
-vim.opt.encoding = "utf-8"
-vim.opt.backspace = "indent,eol,start"
-
--- make moving through soft line breaks better
-vim.api.nvim_set_keymap("n", "j", "gj", { noremap = true })
-
-vim.api.nvim_set_keymap("n", "k", "gk", { noremap = true })
-
--- easy escape from input mode
-vim.api.nvim_set_keymap("i", "jk", "<esc>", { noremap = true })
-
--- Display
-vim.opt.background = "dark"
 vim.cmd([[colorscheme gruvbox]])
-vim.opt.termguicolors = true
-
-vim.opt.showmatch = true -- highlight matching brackets
-vim.opt.scrolloff = 8
-vim.opt.wildmenu = true
-vim.opt.wildignore =
-	"deps,.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc"
-
-vim.opt.list = false
-vim.opt.foldenable = false
-vim.opt.foldlevel = 4
-vim.opt.foldmethod = "syntax"
-vim.opt.wrap = false
-vim.opt.eol = false
-vim.opt.showbreak = "↪"
-
--- make split direction more natural
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-
--- make split navigation easier
-vim.api.nvim_set_keymap("n", "<C-J>", "<C-W><C-J>", { noremap = true })
-
-vim.api.nvim_set_keymap("n", "<C-K>", "<C-W><C-K>", { noremap = true })
-
-vim.api.nvim_set_keymap("n", "<C-L>", "<C-W><C-L>", { noremap = true })
-
-vim.api.nvim_set_keymap("n", "<C-H>", "<C-W><C-H>", { noremap = true })
-
--- Sidebar
-vim.opt.number = true
-vim.opt.numberwidth = 3
-vim.opt.relativenumber = true
-vim.opt.showcmd = true
-
--- Search
-vim.opt.incsearch = true -- show search matches while typing
-vim.opt.hlsearch = true -- highlight search matches
-vim.opt.ignorecase = true -- ignore case in search
-vim.opt.smartcase = true -- override ignore when capital exists
-
--- turn off search highlight
-vim.api.nvim_set_keymap("n", "<leader><leader>", ":nohlsearch<CR>", { noremap = true })
-
--- Whitespace
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.formatoptions = "qnj1"
