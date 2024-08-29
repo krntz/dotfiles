@@ -1,4 +1,12 @@
 return {
+	{ "echasnovski/mini.pairs", 
+        opts = {
+            modes = { insert = true, command = true, terminal = false },
+            skip_ts = { "string" },
+            skip_unbalanced = true,
+            markdown = true,
+        },
+    },
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
