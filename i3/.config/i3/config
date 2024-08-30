@@ -28,8 +28,8 @@ set_from_resource $color15  color15 #000000
 
 # Property Name         Border      BG          Text    Indicator   Child Border
 client.focused          $color7     $color4     $color0 $color8     $color4
-client.focused_inactive $color10    $color10    $color7 $color8     $color10
-client.unfocused        $color10    $color0     $color7 $color10    $color10
+client.focused_inactive $color7     $color0     $color7 $color8     $color7
+client.unfocused        $color7     $color0     $color7 $color7    $color7
 client.urgent           $color1     $color1     $color0 $color1     $color1
 client.placeholder      $color0     $color0     $color7 $color0     $color0
 client.background       $color15
@@ -68,6 +68,8 @@ exec --no-startup-id xset dpms 3600
 #exec --no-startup-id xautolock -time 10 -locker $LOCKER -corners 000-
 
 exec_always --no-startup-id autotiling
+
+font pango:Overpass Nerd Font 14px
 
 ## WORKSPACES
 set $ws1 "1"
@@ -216,7 +218,7 @@ bindsym $mod+control+Down resize grow height 1 px or 1 ppt
 ## MISC
 # borders
 title_align center
-default_border pixel
+default_border normal
 hide_edge_borders smart
 
 # gaps
