@@ -188,15 +188,15 @@ bindsym $mod+F2             restart
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $LOCKER, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $LOCKER && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $LOCKER && systemctl hibernate, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+        bindsym e exec --no-startup-id i3-msg exit, mode "default"
+        bindsym s exec --no-startup-id $LOCKER && systemctl suspend, mode "default"
+        bindsym h exec --no-startup-id $LOCKER && systemctl hibernate, mode "default"
+        bindsym r exec --no-startup-id systemctl reboot, mode "default"
+        bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+# back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
 }
 
 bindsym $mod+Pause mode "$mode_system"
@@ -207,7 +207,7 @@ bindsym $mod+Shift+u exec $HOME/.config/i3/scripts/i3resize.sh down
 bindsym $mod+Shift+i exec $HOME/.config/i3/scripts/i3resize.sh up
 bindsym $mod+Shift+o exec $HOME/.config/i3/scripts/i3resize.sh right
 
- bindsym $mod+control+Right resize grow width 1 px or 1 ppt
+bindsym $mod+control+Right resize grow width 1 px or 1 ppt
 
 bindsym $mod+control+Left resize shrink width 1 px or 1 ppt
 
