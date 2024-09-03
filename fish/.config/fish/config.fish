@@ -31,4 +31,5 @@ abbr -a --position command gpl "git pull"
 abbr -a --position command gcl "git clone"
 abbr -a --position command gs "git status"
 
+fzf --fish | source
 zoxide init --cmd cd fish | source
