@@ -1,6 +1,6 @@
 ## APP CONSTANTS
 set $BROWSER    firefox
-set $MUSIC      spotify
+set $MUSIC      spotify-launcher
 set $TERMINAL   alacritty
 set $LOCKER i3lock && sleep 1
 set $SCREENSHOT_DIR $HOME/Pictures/screenshots
@@ -27,6 +27,8 @@ set_from_resource $color6   color6  #000000
 set_from_resource $color14  color14 #000000
 set_from_resource $color7   color7  #000000
 set_from_resource $color15  color15 #000000
+set_from_resource $background background
+set_from_resource $foreground foreground
 
 # Property Name         Border      BG          Text    Indicator   Child Border
 client.focused          $color7     $color4     $color0 $color8     $color4
@@ -34,7 +36,7 @@ client.focused_inactive $color7     $color0     $color7 $color8     $color7
 client.unfocused        $color7     $color0     $color7 $color7    $color7
 client.urgent           $color1     $color1     $color0 $color1     $color1
 client.placeholder      $color0     $color0     $color7 $color0     $color0
-client.background       $color15
+client.background       $background
 
 ## AUTOSTART SCRIPTS
 # polybar
@@ -56,14 +58,8 @@ exec --no-startup-id $HOME/.fehbg &
 # picom
 exec --no-startup-id picom --config $HOME/.config/picom/picom.conf -b
 
-# turn off beep
-exec --no-startup-id xset b off
-
 # blank screen after 2 minutes
-exec --no-startup-id xset s 120
-
-# turn off screen after 1 hour
-exec --no-startup-id xset dpms 3600
+exec --no-startup-id xset s 480 dpms 600 600 600
 
 # lock computer
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- $LOCKER --nofork
@@ -101,15 +97,19 @@ bindsym $mod+w exec $BROWSER
 
 # start MUSIC
 bindsym $mod+s exec $MUSIC
-for_window [class="Spotify"] move container to workspace $ws10
-for_window [class="Spotify"] fullscreen enable
+assign [class="Spotify"] $ws10
+
+# coms
+assign [class="thunderbird"] $ws5
+assign [class="Slack"] $ws5
+assign [class="zoom"] $ws5
+assign [class="discord"] $ws5
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start rofi
-bindsym $mod+d exec rofi -modi drun -show drun
-
+bindsym $mod+d exec rofi -modi drun -show drun -config ~/.config/rofi/launcher.rasi
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
