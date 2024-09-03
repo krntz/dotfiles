@@ -39,8 +39,11 @@ client.placeholder      $color0     $color0     $color7 $color0     $color0
 client.background       $background
 
 ## AUTOSTART SCRIPTS
+# monitors
+exec_always --no-startup-id autorandr --load light-desk
+
 # polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id sleep 1 && $HOME/.config/polybar/launch.sh
 
 # set correct keymap
 exec --no-startup-id "setxkbmap se"
