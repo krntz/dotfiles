@@ -3,6 +3,8 @@ set $BROWSER    firefox
 set $MUSIC      spotify
 set $TERMINAL   alacritty
 set $LOCKER i3lock && sleep 1
+set $SCREENSHOT_DIR $HOME/Pictures/screenshots
+
 #set $LOCK       slock -m 'Locked at $(date "+%a %d, %H:%M:%s")'
 
 #set $scripts    /home/ak/.scripts
@@ -52,7 +54,7 @@ exec --no-startup-id dunst
 exec --no-startup-id $HOME/.fehbg &
 
 # picom
-#exec --no-startup-id picom -b
+exec --no-startup-id picom --config $HOME/.config/picom/picom.conf -b
 
 # turn off beep
 exec --no-startup-id xset b off
@@ -207,13 +209,16 @@ bindsym $mod+Shift+u exec $HOME/.config/i3/scripts/i3resize.sh down
 bindsym $mod+Shift+i exec $HOME/.config/i3/scripts/i3resize.sh up
 bindsym $mod+Shift+o exec $HOME/.config/i3/scripts/i3resize.sh right
 
- bindsym $mod+control+Right resize grow width 1 px or 1 ppt
+# screenshots
+## files
+bindsym Print exec --no-startup-id maim --format=png "$SCREENSHOT_DIR/$(date -u +'%Y%m%d-%T')-all.png" && notify-send "Screenshot saved to ~/Pictures/screenshots/$(date -u +'%Y%m%d-%T')-all.png"
+bindsym $mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) "$SCREENSHOT_DIR/$(date -u +'%Y%m%d-%T')-current.png" && notify-send "Screenshot saved to ~/Pictures/screenshots/$(date -u +'%Y%m%d-%T')-current.png"
+bindsym Shift+Print exec --no-startup-id maim --format=png --select "$SCREENSHOT_DIR/$(date -u +'%Y%m%d-%T')-selected.png" && notify-send "Screenshot saved to ~/Pictures/screenshots/$(date -u +'%Y%m%d-%T')-selected.png"
 
-bindsym $mod+control+Left resize shrink width 1 px or 1 ppt
-
-bindsym $mod+control+Up resize shrink height 1 px or 1 ppt
-
-bindsym $mod+control+Down resize grow height 1 px or 1 ppt
+## clipboards
+bindsym Ctrl+Print exec --no-startup-id maim --format=png | xclip -selection clipboard -t image/png && notify-send "Screenshot saved to clipboard"
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --format=png --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png && notify-send "Screenshot saved to clipboard"
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --format=png --select | xclip -selection clipboard -t image/png && notify-send "Screenshot saved to clipboard"
 
 ## MISC
 # borders
