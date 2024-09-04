@@ -4,14 +4,14 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		config = function()
-			vim.cmd([[colorscheme catppuccin-frappe]])
+			vim.cmd([[colorscheme catppuccin-mocha]])
 
 			require("catppuccin").setup({
 				integrations = {
 					cmp = true,
 					nvimtree = true,
 					treesitter = true,
-                    barbar = true,
+					barbar = true,
 				},
 			})
 		end,
