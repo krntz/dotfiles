@@ -19,7 +19,9 @@ vim.opt.list = false
 vim.opt.foldenable = false
 vim.opt.foldlevel = 4
 vim.opt.foldmethod = "syntax"
-vim.opt.wrap = false
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.columns = 80
 vim.opt.eol = false
 vim.opt.showbreak = "↪"
 
