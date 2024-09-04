@@ -1,10 +1,5 @@
 return {
 	{
-		"lukas-reineke/headlines.nvim",
-		dependencies = "nvim-treesitter/nvim-treesitter",
-		config = true,
-	},
-	{
 		"echasnovski/mini.pairs",
 		opts = {
 			modes = { insert = true, command = true, terminal = false },
