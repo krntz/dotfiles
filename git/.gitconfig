@@ -1,6 +1,6 @@
 [user]
     name = Amandus Krantz
-    email = krantz.amandus@protonmail.com
+    email = me@amanduskrantz.com
     username = krntz
 [core]
     editor = neovim
@@ -10,3 +10,9 @@
     username = krntz
 [init]
 	defaultBranch = main
+[push]
+    autoSetupRemote = true
+[pull]
+    rebase = false
+[merge]
+    tool = nvimdiff
