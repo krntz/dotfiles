@@ -20,8 +20,8 @@ vim.opt.foldenable = false
 vim.opt.foldlevel = 4
 vim.opt.foldmethod = "syntax"
 vim.opt.wrap = true
+vim.opt.colorcolumn = "80"
 vim.opt.linebreak = true
-vim.opt.columns = 80
 vim.opt.eol = false
 vim.opt.showbreak = "↪"
 
