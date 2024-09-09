@@ -48,3 +48,10 @@ vim.opt.incsearch = true -- show search matches while typing
 vim.opt.hlsearch = true -- highlight search matches
 vim.opt.ignorecase = true -- ignore case in search
 vim.opt.smartcase = true -- override ignore when capital exists
+
+-- Reset cursor when leaving Neovim
+vim.api.nvim_create_autocmd("ExitPre", {
+    group = vim.api.nvim_create_augroup("Exit", { clear = true }),
+    command = "set guicursor=a:hor100",
+    desc = "Set cursor back to underline when leaving Neovim."
+})
