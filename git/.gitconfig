@@ -3,7 +3,7 @@
     email = me@amanduskrantz.com
     username = krntz
 [core]
-    editor = neovim
+    editor = nvim
 [credential]
     helper = cache
 [github]
